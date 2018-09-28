@@ -1,0 +1,12 @@
+dist: trusty
+sudo: required
+language: generic
+services:
+  - docker
+
+matrix:
+  include:
+  - env: OCAMLVER=4.04.2
+
+script:
+  - bin/ci
