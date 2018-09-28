@@ -1,0 +1,12 @@
+#!/bin/bash -eux
+
+REPO="${1:?"The Repo to push to"}"
+BASE_TAG="${2:?"The tag prefix"}"
+VERSION="${3:?"The version"}"
+
+cat "bin/build-matrix" | while IFS="_" read -r -a cells; do
+  OCAML_VERSION="${cells[0]}"
+
+  bin/build-image "${REPO}:${BASE_TAG}" "${GHC_VERSION}" "-${VERSION}"
+  bin/build-image "${REPO}:${BASE_TAG}" "${GHC_VERSION}" ""
+done

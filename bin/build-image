@@ -1,0 +1,17 @@
+#!/bin/sh -eux
+
+TAG_PREFIX="${1:?"The tag prefix"}"
+OCAML_VER="${2:?"The version of OCaml to install"}"
+VERSION="${3:?"The suffix to mark the version"}"
+
+TAG1="${TAG_PREFIX}-${OCAML_VER}"
+TAG2="${TAG_PREFIX}-${OCAML_VER}-${VERSION}"
+
+docker pull "${TAG1}" || true
+
+docker build \
+  --cache-from "${TAG1}" \
+  --tag "${TAG1}" \
+  --tag "${TAG2}" \
+  --build-arg "OCAML_VERSION=${OCAML_VER}" \
+  .
