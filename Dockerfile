@@ -10,4 +10,4 @@ RUN sudo apt-get update -y
 RUN sudo apt-get install -y language-pack-en dos2unix software-properties-common apt-transport-https autoconf automake build-essential libtool make gcc g++ libgmp-dev ncurses-dev libtinfo-dev python3 xz-utils dh-autoreconf libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev
 
 RUN opam switch ${OCAML_VERSION}
-RUN eval $(opam config env) && opam update && opam install -y dune.1.5.0
+RUN eval $(opam config env) && opam update && opam install -y dune.2.5.1
