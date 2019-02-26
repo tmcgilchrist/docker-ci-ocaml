@@ -4,5 +4,6 @@ Contains:
 
 - `ocaml`
 - `opam`
+- `dune`
 
 Some of our random tools.
