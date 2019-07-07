@@ -6,7 +6,8 @@ VERSION="${3:?"The version"}"
 
 cat "bin/build-matrix" | while IFS="_" read -r -a cells; do
   OCAML_VERSION="${cells[0]}"
+  DUNE_VERSION="${cells[1]}"
 
-  bin/build-image "${REPO}:${BASE_TAG}" "${GHC_VERSION}" "-${VERSION}"
-  bin/build-image "${REPO}:${BASE_TAG}" "${GHC_VERSION}" ""
+  bin/build-image "${REPO}:${BASE_TAG}" "${OCAML_VERSION}" "${DUNE_VERSION}" "-${VERSION}"
+  bin/build-image "${REPO}:${BASE_TAG}" "${OCAML_VERSION}" "${DUNE_VERSION}"
 done
