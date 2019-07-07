@@ -9,8 +9,8 @@ jobs:
           name: Build
           command: ./bin/ci.branches
           environment:
-            OCAMLVER: 4.04
-            DUNEVER: 1.5.0
+            OCAML_VER: 4.04
+            DUNE_VER: 1.5.0
 
   deploy:
     docker:
@@ -21,8 +21,8 @@ jobs:
           name: Build
           command: ./bin/ci
           environment:
-            OCAMLVER: 4.04
-            DUNEVER: 1.5.0
+            OCAML_VER: 4.04
+            DUNE_VER: 1.5.0
 workflows:
   version: 2
   build:
