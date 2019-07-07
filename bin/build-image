@@ -3,7 +3,7 @@
 TAG_PREFIX="${1:?"The tag prefix"}"
 OCAML_VER="${2:?"The version of OCaml to install"}"
 VERSION="${3:?"The suffix to mark the version"}"
-DUNE_VER="${4:?"The version of Dune to installe"}"
+DUNE_VER="${4:?"The version of Dune to installed"}"
 
 TAG1="${TAG_PREFIX}-${OCAML_VER}"
 TAG2="${TAG_PREFIX}-${OCAML_VER}-${DUNE_VER}${VERSION}"

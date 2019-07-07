@@ -11,6 +11,6 @@ version:
 deps: version
 
 build: deps Dockerfile
-	bin/build-image "${REPO}:${BASE_TAG}" "${OCAMLVER}" "$(shell cat "data/version")"
+	bin/build-image "${REPO}:${BASE_TAG}" "${OCAML_VER}" "${DUNE_VER}" "$(shell cat "data/version")"
 
 all: build image
